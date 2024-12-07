@@ -1,5 +1,3 @@
-// script.js
-
 const pets = [
     { type: "Dog", age: 2, location: "New York", description: "Friendly and playful" },
     { type: "Cat", age: 3, location: "Los Angeles", description: "Quiet and cuddly" },

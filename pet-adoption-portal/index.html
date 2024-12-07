@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Adoption Portal</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">Pet Adoption</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Pets</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal">Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#signupModal">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero text-center text-white d-flex align-items-center justify-content-center">
+        <div>
+            <h1>Find Your New Best Friend</h1>
+            <p>Adopt a pet and give them a forever home.</p>
+        </div>
+    </section>
+
+    <section class="search text-center my-4">
+        <div class="container">
+            <input type="text" id="search" class="form-control mb-2" placeholder="Search pets by type, age, or location...">
+            <button class="btn btn-primary" onclick="searchPets()">Search</button>
+        </div>
+    </section>
+
+    <section class="pet-list container my-4 d-flex flex-wrap justify-content-center" id="pet-list">
+        <!-- Pet posts will be dynamically inserted here -->
+    </section>
+
+    <section class="add-pet container my-4" id="add-pet-section">
+        <h2 class="text-center">Add a New Pet</h2>
+        <form id="addPetForm">
+            <div class="form-group">
+                <label for="petType">Type:</label>
+                <input type="text" id="petType" name="petType" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="petAge">Age:</label>
+                <input type="number" id="petAge" name="petAge" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="petLocation">Location:</label>
+                <input type="text" id="petLocation" name="petLocation" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="petDescription">Description:</label>
+                <textarea id="petDescription" name="petDescription" class="form-control" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="petImage">Image URL:</label>
+                <input type="text" id="petImage" name="petImage" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-success">Add Pet</button>
+        </form>
+    </section>
+
+    <section class="contact-form container my-4 text-center">
+        <h2>Contact the Pet Poster</h2>
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" class="form-control" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Pet Adoption Portal. All rights reserved.</p>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label for="loginEmail">Email:</label>
+                            <input type="email" id="loginEmail" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword">Password:</label>
+                            <input type="password" id="loginPassword" name="password" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signupModalLabel">Sign Up</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="signupForm">
+                        <div class="form-group">
+                            <label for="signupName">Name:</label>
+                            <input type="text" id="signupName" name="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signupEmail">Email:</label>
+                            <input type="email" id="signupEmail" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signupPassword">Password:</label>
+                            <input type="password" id="signupPassword" name="password" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn btn-success">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

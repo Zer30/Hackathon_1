@@ -1,0 +1,461 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+.log-in{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 100px;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo{
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.navbar a{
+    position: relative;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: 0.5s;
+}
+
+.navbar a:hover{
+    color: rgba(124, 219, 0, 0.884);
+}
+.navbar a{
+    display:inline;
+    width: 550px;
+    height: 550px;
+    border: none;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.navbar .btnLogin-popup{
+    width: 80px;
+    height: 30px;
+    background-color: white;
+    border-radius: 10px;
+    border-style: none;
+    margin-left: 30px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    transition: 0.5s;
+}
+
+.navbar .btnLogin-popup:hover{
+    background:rgba(124, 219, 0, 0.884);
+    color: black;
+}
+
+.wrapper{
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    background: rgba(7, 7, 7, 0.411);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(20px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform: scale(0);
+    transition:transform .5s ease, height .2s ease;
+    z-index: 1;
+}
+
+.wrapper.active-popup{
+    transform: scale(1);
+}
+
+.wrapper.active{
+    height: 450px;
+}
+
+.wrapper .form-box{
+    width: 100%;
+    padding: 40px;
+}
+
+.wrapper .form-box.login{
+    transition: transform .18s ease;
+    transform:translateX(0) ;
+}
+
+.wrapper.active .form-box.login{
+    transition: none;
+    transform: translateX(-400px);
+}
+
+.wrapper .form-box.register{
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+
+.wrapper.active .form-box.register{
+    transition: transform .18s ease;
+    transform:translateX(0) ;
+}
+
+.wrapper .icon-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: rgb(0, 0, 0);
+    font-size: 20px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius:20px;
+    cursor: pointer;
+    z-index: 1;
+}
+.icon-close:hover{
+    background: rgb(255, 9, 9);
+    transition: 0.5s;
+}
+
+.form-box h2{
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid rgb(255, 255, 255);
+    margin: 30px 0;
+}
+
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label{
+    top: -5px;
+}
+
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.input-box .icon{
+    position: absolute;
+    right: 8px;
+    line-height: 45px;
+}
+
+.remember-forgot{
+    font-size: 14px;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot label input{
+    accent-color: rgb(255, 255, 255);
+    margin-right: 3px;
+}
+
+.remember-forgot a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.remember-forgot a:hover{
+    text-decoration: underline;
+}
+
+.btn-reg{
+    width: 100%;
+    height: 45px;
+    background: white;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+}
+.btn-reg:hover{
+    background:rgba(124, 219, 0, 0.884);
+    color: black;
+    transition: 0.5s;
+}
+
+.login-register{
+    font-size: 14px;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+
+.login-register p a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+
+}
+
+.login-register a:hover{
+    text-decoration: underline;
+}
+
+.home{
+    display: flex;
+    align-items: center;
+    height: 93vh;
+    padding: 0 5%;
+    background-image: url(img/hero-img.jpg);
+    color: white;
+}
+
+.home-container h1{
+    display: flex;
+    text-align: center;
+    font-size: 64px;
+}
+.home-container p{
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.btn-box{
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-box a:hover{
+    background:rgba(124, 219, 0, 0.884);
+    color: black;
+
+}
+
+.home-container .btn-box{
+    display: flex;
+    justify-content: space-between;
+    width: 340px;
+    height: 50px;
+}
+
+.btn-box a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 100%;
+    background: white;
+    color: black;
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: 0.5s;
+}
+
+.requirements{
+    height: 100vh;
+    padding: 5% 5%;
+    background: url(img/requirements-img.png) no-repeat;
+    background: url(img/requirements-background-img.png) no-repeat;
+    /* background-position: 25%; */
+    background-size: auto;
+    display: flex;
+    /* background-position: right; */
+}
+.requirements h1{
+    font-size: 64px;
+}
+.requirements p{
+    font-size: 24px;
+}
+.requirements h5{
+    font-size: 20px;
+}
+.r-item-container{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    line-height: 40px;
+}
+.r-item-container i{
+    font-size: 50px;
+    width: 25px;
+    height: 25px;
+    padding-top: 25px;
+    padding-right: 100px;
+}
+
+.Pets{
+    position: relative;
+    height: 180vh;
+}
+
+.Pets h1{
+    font-size: 64px;
+}
+.pets-headlines{
+    padding-top: 55px;
+    padding-left: 300px;
+    display: flex;
+    text-align: center;
+}
+
+.card-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, auto));
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card{
+    position: relative;
+    width: 280px;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+    overflow: hidden;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+    margin: 20px;
+}
+
+.card img{
+    width: 100%;
+    height: auto;
+}
+
+.card-content{
+    padding: 15px;
+}
+
+.card-content h3{
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.card-content p{
+    color: #666;
+    font-size: 15px;
+    line-height: 1.3;
+}
+
+.card-content .btn{
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: rgb(0, 0, 0);
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 16px;
+    color: rgb(255, 255, 255);
+}
+#adopt-btn:hover{
+    background:rgba(124, 219, 0, 0.884);
+    color: black;
+    transition: 0.5s;
+}
+
+#detail-btn:hover{
+    color:rgba(124, 219, 0, 0.884) ;
+    transition: 0.5s;
+}
+
+.about{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    padding: 0% 15%;
+    background-image: url();
+    color: rgb(0, 0, 0);
+    align-content: center;
+}
+
+.about-headlines h1{
+    font-size: 64px;
+}
+
+.about-headlines p{
+    font-size: 24px;
+}
+
+.about .btn{
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: rgb(0, 0, 0);
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 16px;
+    color: rgb(255, 255, 255);
+    border: none;
+    transition: 0.5s;
+}
+
+.about .btn:hover{
+    background:rgba(124, 219, 0, 0.884);
+    color: black;
+}
+
+.about-info-item h5{
+    font-size: 24px;
+}
+.about-info-item h6{
+    font-size: 18px;
+}
+
+footer{
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 10px;
+}

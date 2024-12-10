@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="script.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <title>AdoPet</title>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">AdoPet</a>
+
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="index.html#requirements">Requirements</a>
+            <a href="index.html#pets">Pets</a>
+            <a href="index.html#about">About</a>
+            <button class="btnLogin-popup">Log In</button>
+        </nav>
+    </header>
+
+    <section class="home">
+        <div class="wrapper">
+            <span class="icon-close"><i class="fa-solid fa-xmark"></i></span>
+            <div class="form-box login">
+                <h2>Login</h2>
+                <form action="#">
+                    <div class="input-box">
+                        <span class="icon"><i class="fa-regular fa-envelope"></i></span>
+                        <input type="email"id="username" required >
+                        <label>Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><i class="fa-solid fa-lock"></i></span>
+                        <input type="password" id="password" required>
+                        <label>Password</label>
+                    </div>
+                    <div class="remember-forgot">
+                        <label><input type="checkbox">Remember me</label>
+                        <a href="#">Forgot Password?</a>
+                    </div>
+                    <button type="submit" class="btn-reg" onclick="login()">Login</button>
+                    <div class="login-register">
+                        <p>Don't have an account? 
+                            <a href="#" class="register-link">Register</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+    
+            <div class="form-box register">
+                <h2>Registration</h2>
+                <form action="#">
+                    <div class="input-box">
+                        <span class="icon"><i class="fa-regular fa-user"></i></span>
+                        <input type="text" id="username" required>
+                        <label for="email">Username</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><i class="fa-regular fa-envelope"></i></span>
+                        <input type="email" id="username" required>
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><i class="fa-solid fa-lock"></i></span>
+                        <input type="password" id="password" required>
+                        <label for="password">Password</label>
+                    </div>
+                    <div class="remember-forgot">
+                        <label for=""><input type="checkbox">I agree to the terms & conditions</label>
+                    </div>
+                    <button type="submit" class="btn-reg" onclick="register()">Register</button>
+                    <div class="login-register">
+                        <p>Already have an account? 
+                            <a href="#" class="login-link">Login</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="home-container">
+            <h1>Find Your Purrfect Pet Soul Today!</h1>
+            <p>Discover Your Perfect Companion in Our Selection of Loving Pets Available for Adoption</p>
+            <div class="btn-box">
+                <a href="#pets">Pets</a>
+                <a href="#about">About</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="requirements" id="requirements">
+        <div class="requirements-headlines">
+            <h1>Our Process For Adoption</h1>
+            <p>Our process is simple and filled with joy every step of the way</p>
+    
+            <div class="r-item-container">
+              <div class="r-item">
+                <div class="r-logo">
+                  <h5><i class="fa-regular fa-newspaper"></i>Create an account and choose your pet</h5>
+                </div>
+            </div>
+    
+            <div class="r-item">
+                <div class="r-logo">
+                  <h5><i class="fa-solid fa-phone"></i>Attend a phone call with the donator</h5>
+                </div>
+            </div>
+    
+            <div class="r-item">
+                <div class="r-logo">
+                  <h5><i class="fa-solid fa-paw"></i>Meet the pet in person</h5>
+                </div>
+            </div>
+    
+            <div class="r-item">
+                <div class="r-logo">
+                  <h5><i class="fa-regular fa-file-zipper"></i>Sign an adoption agreement</h5>
+                </div>
+            </div>
+    
+            <div class="r-item">
+                <div class="r-logo">
+                  <h5><i class="fa-solid fa-handshake"></i>Congratulation on finding a match!</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="Pets" id="pets">
+        <div class="pets-headlines">
+            <h1><i class="fa-solid fa-paw"></i> Meet Your Soul pet</h1>
+        </div>
+        <div class="card-container">
+            <div class="card">
+                <img src="img/pet1.jpg" alt="">
+                <div class="card-content">
+                    <h3 id="petName">Luna</h3>
+                    <p id="petType">Cat</p>
+                    <a href="" class="btn" id="adopt-btn">Adopt</a>
+                    <a href="" class="btn" id="detail-btn">More Details</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="img/pet2.jpg" alt="">
+                <div class="card-content">
+                    <h3 id="petName">Buddy</h3>
+                    <p id="petType">Dog</p>
+                    <a href="" class="btn" id="adopt-btn">Adopt</a>
+                    <a href="" class="btn" id="detail-btn">More Details</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="img/pet3.jpg" alt="">
+                <div class="card-content">
+                    <h3 id="petName">Max</h3>
+                    <p id="petType">Parrot</p>
+                    <a href="" class="btn" id="adopt-btn">Adopt</a>
+                    <a href="" class="btn" id="detail-btn">More Details</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="img/newimg.jpg" alt="">
+                <div class="card-content">
+                    <h3><input type="text" id="petName" placeholder="Pet Name"></h3>
+                    <p><input type="text" id="petType" placeholder="Pet Type"></p>
+                    <a href="" class="btn" id="adopt-btn" onclick="addPet()">Add Pet</a>
+                </div>
+            </div>
+    </section>
+
+
+    <div class="about" id="about">
+        <div class="about-headlines">
+          <h1>About Us</h1>
+          <p>
+            AdoPet is not just a <b>pet adoption website</b>; it's a haven for 
+            both pets in search of their forever homes and compassionate individuals ready 
+            to welcome them with open arms.
+          </p>
+  
+          <div class="about-info">
+            <div class="about-info-item">
+              <h5>100+</h5>
+              <h6>Saved Pets</h6>
+            </div>
+            <div class="about-info-item">
+              <h5>100%</h5>
+              <h6>Adoption Rate</h6>
+            </div>
+            <div class="about-info-item">
+              <h5>5 Star</h5>
+              <h6>Community Loved</h6>
+            </div>
+        </div>
+        <a href ="#index.html#pets" class="btn">Get Started</a>
+        </div>
+    </div>
+
+    <footer>
+        <p class="copyright">All Rights Reserved to <b>AdoPet</b></p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
